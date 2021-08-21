@@ -589,3 +589,21 @@ FROM products AS a
 ORDER BY b.store_name;
 --
 --
+# TODO: Subquery
+SELECT lastName,
+    firstName
+FROM employees
+WHERE officeCode IN (
+        SELECT officeCode
+        FROM offices
+        WHERE country = 'USA'
+    );
+--
+SELECT customerNumber,
+    checkNumber,
+    amount
+FROM payments
+WHERE amount = (
+        SELECT MAX(amount)
+        FROM payments
+    );
