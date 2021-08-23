@@ -620,3 +620,10 @@ WHERE
 GROUP BY productCode
 ORDER BY sales DESC
 LIMIT 5;
+--
+SELECT 
+    select_list
+FROM
+    a_table
+WHERE
+    [NOT] EXISTS(subquery);
